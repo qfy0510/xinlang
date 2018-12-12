@@ -1,0 +1,117 @@
+a:hover{
+    color:#ff4400;
+}
+.login{
+    width:570px;
+    height:294px;
+    background:#fff;
+    border:2px solid #e6e6e6;
+    position:fixed;
+    left:50%;
+    top: 50%;
+    margin-left:-285px;
+    margin-top:-147px;
+
+}
+.left{
+    float:left;
+    width:200px;
+    height:215px;
+    margin-top:40px;
+    margin-left:23px;
+}
+.left h3{
+    font-size:18px;
+    color:#383838;
+    margin-bottom:17px;
+    font-family:"微软雅黑";
+}
+.left img{
+    margin-left:9px;
+}
+.right{
+    float:left;
+    width:285px;
+    margin-left:38px;
+    margin-top:40px;
+}
+.right h3{
+    font-size:18px;
+    color:#383838;
+    font-family:"微软雅黑";
+}
+.log{
+    width:235px;
+    height:34px;
+    border:1px solid #dddddd;
+    padding-left:45px;
+    margin-top:13px;
+    font-size:12px;
+    color:#9f9f9f;
+    line-height:34px;
+    font-family:"微软雅黑";
+}
+.logBg{
+    background:url("../images/log.jpg") no-repeat left center;
+
+}
+.psw{
+    width:235px;
+    height:34px;
+    border:1px solid #dddddd;
+    padding-left:45px;
+    margin-top:13px;
+    font-size:12px;
+    color:#9f9f9f;
+    line-height:34px;
+    font-family:"微软雅黑";
+}
+.pswBg{
+    background:url("../images/psw.jpg") no-repeat left center;
+}
+.auto span{
+    display:block;
+    float:left;
+    font:12px/42px "微软雅黑";
+    color:#404040;
+    vertical-align:middle;
+}
+.auto a{
+    float:right;
+    font:12px/42px "微软雅黑";
+    color:#404040;
+}
+.auto a:hover{
+    color:#ff4400;
+}
+.sub{
+    width:280px;
+    height:38px;
+    background:#ff4401;
+    border:1px solid #bf5845;
+    align:center;
+}
+.sub input{
+    font:18px/38px "微软雅黑";
+    color:#fff1f4;
+    padding-left:120px;
+}
+.wbLog{
+    display:block;
+    float:left;
+    background:url("../images/wb.jpg") no-repeat left center;
+    font:12px/40px "微软雅黑";
+    color:#363636;
+    padding-left:30px;
+}
+.freeReg{
+    display:block;
+    float:right;
+    font:12px/40px "微软雅黑";
+    color:#363636;
+}
+.back{
+    position:absolute;
+    top:8px;
+    right:8px;
+}

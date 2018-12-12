@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/public.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script>
+        window.onload = function(){
+            var oDiv = document.getElementById('nav');
+            var aBtn = oDiv.getElementsByTagName('a');
+            var oCon = document.getElementById('con');
+            var aBg = oCon.getElementsByTagName('li');
+            var oNum = document.getElementById('num');
+            var aBtn = oNum.getElementsByTagName('b');
+            var oPrev = document.getElementById('prev');
+            var oNext = document.getElementById('next');
+            var iNow=0;
+            for(var i=0;i<aBtn.length;i++) {
+                aBtn[i].onmouseover = function(){
+                    for(var j=0;j<aBtn.length;j++)
+                        aBtn[j].className ='';
+                    this.className = 'current';
+                }
+            }
+
+            for(var i = 0;i<aBtn.length;i++){
+                aBtn[i].index = i;
+                aBtn[i].onmouseover = function(){
+                    iNow = this.index;
+                    fn();
+                }
+            }
+            function fn(){
+                for(var i = 0;i<aBtn.length;i++){
+                    aBtn[i].className = '';
+                    aBg[i].className = '';
+                }
+                aBtn[iNow].className = 'current';
+                aBg[iNow].className = 'show';
+            }
+
+            oNext.onclick = function(){
+                iNow++;
+                if( iNow == aBtn.length) iNow=0;
+                fn();
+            }
+
+            oPrev.onclick = function(){
+                iNow--;
+                if( iNow == -1) iNow=aBtn.length-1;
+                fn();
+            }
+        }
+    </script>
+</head>
+<body>
+    <!--顶部-->
+    <div class="top">
+        <div class="wrap">
+            <div class="link">
+                <a href="javascript:;" target="_blank">新浪首页</a><a href="javascript:;" target="_blank">新浪游戏</a><a href="javascript:;" target="_blank">97973手游网</a><a href="javascript:;" target="_blank">微游戏</a>
+            </div>
+            <div class="mobile">
+                <a href="javascript:;" target="_blank">手机</a>
+            </div>
+            <div class="notice">
+                <h3>公告：</h3>
+                <ul>
+                    <li><a href="javascript:;" target="_blank">参与调研，得海量积分</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--顶部 end-->
+
+    <!--头部-->
+    <div class="header">
+        <div class="wrap">
+            <div class="headerBg">
+                <a href="javascript:;" target="_blank"><img src="images/bg-top.jpg" alt="积分商城"></a>
+            </div>
+            <div class="headerCenter">
+                <a href="javascript:;" target="_blank"><img src="images/image-top.jpg" alt="积分竞拍"></a>
+            </div>
+            <div class="headerSearch">
+                <form action="">
+                    <input type="text" placeholder="输入查询商品名称…… " class="search">
+                    <input type="submit" value="搜索" class="searchPoint">
+                </form>
+            </div>
+        </div>
+    </div>
+    <!--头部end-->
+
+    <!--导航-->
+    <div class="nav">
+        <div class="wrap">
+            <div class="navTitle" id="nav">
+                <a class="current" href="index.html" target="_blank">首页</a>
+                <a href="javascript:;" target="_blank">赚取积分</a>
+                <a href="list.html" target="_blank">兑换商品</a>
+                <a href="javascript:;" target="_blank">积分活动</a>
+                <a href="javascript:;" target="_blank">积分调研</a>
+                <a href="javascript:;" target="_blank">常见问题</a>
+            </div>
+            <div class="userLogin"><a href="login.html" target="_blank">用户登录</a></div>
+        </div>
+    </div>
+    <!--导航 end-->
+
+    <!--最新消息-->
+    <div class="wrap content">
+        <ul class="contentLeft" id="con">
+            <li class="show">
+                <a href="javascript:;" target="_blank"><img src="images/bidding.jpg" alt="积分竞拍"></a>
+            </li>
+            <li>
+                <a href="javascript:;" target="_blank"><img src="images/bidding1.jpg" alt="积分竞拍"></a>
+            </li>
+            <li>
+                <a href="javascript:;" target="_blank"><img src="images/bidding2.jpg" alt="积分竞拍"></a>
+            </li>
+            <li>
+                <a href="javascript:;" target="_blank"><img src="images/bidding3.jpg" alt="积分竞拍"></a>
+            </li>
+            <span id="prev"></span>
+            <span id="next"></span>
+            <div class="num" id="num">
+                <b class="current">1</b>
+                <b>2</b>
+                <b>3</b>
+                <b>4</b>
+            </div>
+        </ul>
+        <div class="news">
+            <div class="sign">
+                <a href="javascript:;" target="_blank" class="newsCheck">
+                    <span>签到得100积分</span>
+                </a>
+            </div>
+            <div class="newsTab">
+                <h3>最新消息</h3>
+                <ul>
+                    <li><a href="javascript:;" target="_blank">【通知】UID查询网址</a></li>
+                    <li><a href="javascript:;" target="_blank">【活动】众筹中奖晒单得积分</a></li>
+                    <li><a href="javascript:;" target="_blank">【活动】参与调研，获10万积分</a></li>
+                    <li><a href="javascript:;" target="_blank">【消息】官方QQ群获取更多赚积</a></li>
+                </ul>
+            </div>
+            <div class="qq"><a href="javascript:;" target="_blank">客服QQ</a></div>
+            <div class="weibo"><a href="javascript:;" target="_blank">官方微博</a></div>
+        </div>
+    </div>
+    <!--最新消息end-->
+
+    <!--推荐商品-->
+    <div class="commend">
+        <div class="commendBg wrap">
+            <div class="commendLeft">
+                <div class=" clearfix title">
+                    <h3>推荐商品</h3>
+                    <a href="javascript:;" target="_blank">更多>></a>
+                </div>
+
+                <ul class="goods">
+                    <li class="goodsPic">
+                        <a href="javascript:;" target="_blank">
+                            <img src="images/bottle.jpg" alt="户外迷彩水壶">
+                            <h3>户外迷彩水壶</h3>
+                            <span>3,000,000积分</span>
+                        </a>
+                    </li>
+                    <li class="goodsPic">
+                        <a href="javascript:;" target="_blank">
+                            <img src="images/knife.jpg" alt="迷你军工刀">
+                            <h3>迷你军工刀</h3>
+                            <span>2,500,000积分</span>
+                        </a>
+                    </li>
+                    <li class="goodsPic">
+                        <a href="javascript:;" target="_blank">
+                            <img src="images/bag.jpg" alt="军工渔具包">
+                            <h3>军工渔具包</h3>
+                            <span>3,500,000积分</span>
+                        </a>
+                    </li>
+                    <li class="goodsPic">
+                        <a href="javascript:;" target="_blank">
+                            <img src="images/box.jpg" alt="柳编收纳盒">
+                            <h3>柳编收纳盒</h3>
+                            <span>3,000,000积分</span>
+                        </a>
+                    </li>
+                    <li class="goodsPic">
+                        <a href="javascript:;" target="_blank">
+                            <img src="images/tray.jpg" alt="柳编托盘">
+                            <h3>柳编托盘</h3>
+                            <span>1,100,000积分</span>
+                        </a>
+                    </li>
+                    <li class="goodsPic">
+                        <a href="javascript:;" target="_blank">
+                            <img src="images/silk.jpg" alt="复古条纹方巾">
+                            <h3>复古条纹方巾</h3>
+                            <span>1,200,000积分</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="exchange">
+                <div class=" clearfix title">
+                    <h3>热门兑换</h3>
+                </div>
+                  <ul class="exText">
+                      <li class="clearfix">
+                          <img src="images/whiting.jpg">
+                          <div class=" message">
+                              <h3>大白大紫</h3>
+                              <p>3小时前兑换了</p>
+                              <a href="javascript:;" target="_blank">牛津防水帆布袋</a>
+                          </div>
+                      </li>
+                      <li class="clearfix">
+                          <img src="images/whiting.jpg">
+                          <div class=" message">
+                              <h3>大白大紫</h3>
+                              <p>2天前兑换了</p>
+                              <a href="javascript:;" target="_blank">四维空间LOVEBOX套装</a>
+                          </div>
+                      </li>
+                      <li class="clearfix">
+                          <img src="images/whiteT.jpg">
+                          <div class=" message">
+                              <h3>积友391901234</h3>
+                              <p>3天前兑换了</p>
+                              <a href="javascript:;" target="_blank">ChinaJoy2014官方限量定制版T恤白色</a>
+                          </div>
+                      </li>
+                      <li class="clearfix">
+                          <img src="images/blackT.jpg">
+                          <div class=" message">
+                              <h3>积友24257788</h3>
+                              <p>17小时前兑换了</p>
+                              <a href="javascript:;" target="_blank">ChinaJoy2014官方限量定制版T恤黑色</a>
+                          </div>
+                      </li>
+                      <li class="clearfix nobor">
+                          <img src="images/whiting.jpg">
+                          <div class=" message">
+                              <h3>大白大紫</h3>
+                              <p>22小时前兑换了</p>
+                              <a href="javascript:;" target="_blank">四维空间LOVEBOX套装</a>
+                          </div>
+                      </li>
+                  </ul>
+              </div>
+        </div>
+    </div>
+    <!--推荐商品end-->
+
+    <!--赚取积分-->
+    <div class="Kpoint">
+        <div class="wrap point">
+            <div class=" clearfix title">
+                <h3>赚取积分</h3>
+                <a href="javascript:;" target="_blank">更多>></a>
+            </div>
+            <ul class="pointPic">
+                <li class="Advertise">
+                    <a href="javascript:;" target="_blank" class="AdvPic">
+                        <img src="images/AD1.jpg" alt="死海矿物硫磺皂">
+                        <p>milensea死海矿物硫磺皂代金券，火热兑换中</p>
+                    </a>
+                    <a href="javascript:;" target="_blank" class="AdvText">【广告点击】milensea死海矿物硫磺皂 </a><span>200积分</span>
+                </li>
+                <li class="Advertise">
+                    <a href="javascript:;" target="_blank" class="AdvPic">
+                        <img src="images/AD2.jpg" alt="诺道益生菌固体饮料">
+                        <p>诺道益生菌固体饮料代金券，火热兑换中</p>
+                    </a>
+                    <a href="javascript:;" target="_blank" class="AdvText">【广告点击】诺道益生菌固体饮料CC</a>
+                    <span>200积分</span>
+                </li>
+                <li class="Advertise">
+                    <a href="javascript:;" target="_blank" class="AdvPic">
+                        <img src="images/AD3.jpg" alt="娇顿光彩无暇气垫CC ">
+                        <p>娇顿光彩无暇气垫CC80元优惠券，火热兑换中</p>
+                    </a>
+                    <a href="javascript:;" target="_blank" class="AdvText">【广告点击】娇顿光彩无暇气垫CC </a><span>200积分</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!--赚取积分end-->
+
+    <!--尾部-->
+    <div class="bottom">
+        <ul class="wrap">
+            <li class="attention">
+                <span class="attBg"></span>
+                <h3>关注我们</h3>
+                <a href="javascript:;" target="_blank">官方微博</a>
+                <a href="javascript:;" target="_blank">官方QQ群</a>
+            </li>
+            <li class="question">
+                <span class="queBg"></span>
+                <h3>常见问题</h3>
+                <a href="javascript:;" target="_blank">兑换方式</a>
+                <a href="javascript:;" target="_blank">配送方式</a>
+            </li>
+            <li class="boLink">
+                <span class="linkBg"></span>
+                <h3>友情链接</h3>
+                <a href="javascript:;" target="_blank">新浪网</a>
+                <a href="javascript:;" target="_blank">新浪游戏</a>
+            </li>
+            <li class="active">
+                <span class="actBg"></span>
+                <h3>特色活动</h3>
+                <a href="javascript:;" target="_blank">疯狂积分雨</a>
+                <a href="javascript:;" target="_blank">转盘抽奖</a>
+            </li>
+            <li class="bottomRight">
+                <h3>关注公众号，每天送福利</h3>
+                <img src="images/code.jpg" alt="二维码">
+                <img class="bottomLine" src="images/line.jpg" alt="横线">
+                <h3>商务合作</h3>
+                <p>shanshan35@staff.sina.com.cn</p>
+            </li>
+        </ul>
+    </div>
+    <!--尾部end-->
+
+    <!--底部-->
+    <div class="foot">
+        <div class="wrap tail">
+            <a href="javascript:;" target="_blank">新浪简介</a>|<a href="javascript:;" target="_blank">About Sina</a>|<a href="javascript:;" target="_blank">网站地图</a>|<a href="javascript:;" target="_blank">广告服务</a>|<a href="javascript:;" target="_blank">联系我们</a>|<a href="javascript:;" target="_blank">招聘信息</a>|<a href="javascript:;" target="_blank">网站律师</a>|<a href="javascript:;" target="_blank">SINA English</a>|<a href="javascript:;" target="_blank">通信证信息</a>|<a href="javascript:;" target="_blank">产品答疑</a>
+            <p>Copyright <img src="images/c.jpg" alt="符号c"> 1996-2014 SINA Corporation,All Rights Reserved</p>
+            <p>新浪公司版权所有</p>
+        </div>
+    </div>
+    <!--底部end-->
+
+    <div class="goTop">
+        <a href="#" target="_self"><img src="images/gotop.jpg" alt="回到顶部"></a>
+    </div>
+
+
+</body>
+</html>
